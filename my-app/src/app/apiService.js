@@ -1,6 +1,7 @@
 import axios from "axios";
 import { BASE_URL } from "./config";
 
+console.log(BASE_URL)
 const apiService = axios.create({ baseURL: BASE_URL });
 
 apiService.interceptors.request.use(
@@ -21,7 +22,7 @@ apiService.interceptors.response.use(
   },
   function (error) {
     console.log("RESPONSE ERROR", error);
-    const message = error.response?.data?.errors?.message || "unknown";
+    const message = error.response?.data?.errors?.message || "Unknown Error";
     return Promise.reject({ message });
   }
 );

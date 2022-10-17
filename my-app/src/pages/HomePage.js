@@ -18,7 +18,8 @@ import { Box } from "@mui/material";
 import { Card } from "@mui/material";
 import ProfileCover from "../features/user/ProfileCover";
 import styled from "@emotion/styled";
-
+import SendIcon from '@mui/icons-material/Send';
+import SentRequests from "../features/friends/SentRequests"
 const TabsWrapperStyle = styled("div")(({ theme }) => ({
   zIndex: 9,
   bottom: 0,
@@ -56,6 +57,11 @@ function HomePage() {
       value: "requests",
       icon: <ContactMailIcon sx={{ fontSize: 24 }} />,
       component: <FriendRequests />,
+    },
+    {
+      value: "requests sent",
+      icon: <SendIcon sx={{ fontSize: 24 }} />,
+      component: <SentRequests/>,
     },
     {
       value: "add_friend",

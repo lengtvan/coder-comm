@@ -69,7 +69,7 @@ function LoginPage() {
               Get started
             </Link>
           </Alert>
-          <Typography>Hello</Typography>
+          
           <FTextField name="email" label="Email Address" />
           <FTextField
             name="password"
@@ -110,7 +110,7 @@ function LoginPage() {
           Login
         </LoadingButton>
       </FormProvider>
-      <div>huhu</div>
+      
     </Container>
   );
 }

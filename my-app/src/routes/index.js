@@ -24,7 +24,7 @@ function Router() {
       >
         <Route index element={<HomePage />} />
         <Route path="account" element={<AccountPage />} />
-        <Route path="user/:userID" element={<UserProfilePage />} />
+        <Route path="user/:userId" element={<UserProfilePage />} />
       </Route>
       <Route element={<BlankLayout />}>
         <Route path="/login" element={<LoginPage />} />

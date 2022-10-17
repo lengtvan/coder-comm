@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from "react";
 import {Stack,Typography,Card,Box,Pagination,Grid,Container,} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
-import {getFriendRequest, getFriendRequestSent, getFriends} from "./friendSlice";
+import {getFriendRequestSent} from "./friendSlice";
 import UserCard from "./UserCard";
 import SearchInput from "../../components/SearchInput"
 function FriendRequest() {
@@ -11,7 +11,7 @@ function FriendRequest() {
   const users=currentPageUsers.map(((userId)=>usersById[userId]))
   const dispatch=useDispatch();
   useEffect(()=>{
-    dispatch(getFriendRequest({filterName,page}));
+    dispatch(getFriendRequestSent({filterName,page}));
   }, [filterName,page,dispatch])
   const handleSubmit=(searchQuery)=>{
     setFilterName(searchQuery);
@@ -19,7 +19,7 @@ function FriendRequest() {
   
   return (
     <Container>
-      <Typography variant="h4" sx={{mb:3}}>Friend Requests</Typography>
+      <Typography variant="h4" sx={{mb:3}}>Sent Requests</Typography>
       <Card sx={{p:3}}>
         <Stack spacing={2}>
           <Stack direction={{xs:"column", md:"row"}} alignItems="center">
